@@ -44,6 +44,7 @@
 						<a href="#new-clubs" class="nav-link">Buy New Clubs</a>
 					</li>
 				</ul>
+
 			</div>
 		</div>
 	</nav>
@@ -101,136 +102,101 @@
 		</ul>
 	</section>
 	<section class="clubs" id="club">
+		<ul class="nav nav-tabs justify-content-end ">
+			<li class="nav-item">
+				<a class="nav-link active" aria-current="page" href="#"><img src="./icon/icon_driver.webp" alt="diver-img"><b><u>Drivers</u></b></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#"><img src="./icon/icon-iron.webp" alt="iron-img"><b><u>Irons</u></b></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="#"><img src="./icon/icon_wedge.webp" alt="wedge-img"><b><u>Wedges</u></b></a>
+			</li>
+		</ul>
 		<div class="bg-image img-fluid" style="background-image: url(./pictures/fairway.jpg); height: 100vh;">
 			<h3>Clubs Coming Soon!!!</h3>
 		</div>
 	</section>
 	<section class="new-clubs" id="new-clubs">
-		<div class="accordion accordion-flush" id="links">
+		<div class="accordion accordion-flush my-4 py-4 col-md-5" id="links">
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="heading-1">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#golf-link-1">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#golf-link-1">
 						Golf Galaxy
 					</button>
 				</h2>
-				<div id="golf-link-1" class= "accordion-collapse collapse">
+				<div id="golf-link-1" class="accordion-collapse collapse">
 					<a href="https://www.golfgalaxy.com/" class="text-decoration-none">Golf Galaxy</a>
 				</div>
 			</div>
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="heading-2">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#golf-link-2">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#golf-link-2">
 						TaylorMade
 					</button>
 				</h2>
-				<div id="golf-link-2" class= "accordion-collapse collapse">
+				<div id="golf-link-2" class="accordion-collapse collapse">
 					<a href="https://www.taylormadegolf.com/" class="text-decoration-none">TaylorMade</a>
 				</div>
 			</div>
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="heading-3">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#golf-link-3">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#golf-link-3">
 						PING
 					</button>
 				</h2>
-				<div id="golf-link-3" class= "accordion-collapse collapse ">
+				<div id="golf-link-3" class="accordion-collapse collapse ">
 					<a href="https://www.ping.com/" class="text-decoration-none">PING</a>
 				</div>
 			</div>
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="heading-4">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#golf-link-4">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#golf-link-4">
 						Callaway Golf
 					</button>
 				</h2>
-				<div id="golf-link-4" class= "accordion-collapse collapse">
+				<div id="golf-link-4" class="accordion-collapse collapse">
 					<a href="https://www.callawaygolf.com/" class="text-decoration-none">Callaway Golf</a>
 				</div>
 			</div>
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="heading-5">
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#golf-link-5">
+					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+						data-bs-target="#golf-link-5">
 						PXG
 					</button>
 				</h2>
-				<div id="golf-link-5" class= "accordion-collapse collapse">
+				<div id="golf-link-5" class="accordion-collapse collapse">
 					<a href="https://www.taylormadegolf.com/" class="text-decoration-none">PXG</a>
 				</div>
 			</div>
-			
 		</div>
+		<!-- <div class="col-md-5 text-center d-none d-md-block">
+			<img class="img-fluid" src="./pictures/scott-warman-HHi1Hy4k9cg-unsplash.jpg"
+				alt="golfer">
+		</div> -->
 	</section>
-	<section class="maps" style="width: 100%; height: 300px;" id="maps">
+	<section class="maps" id="map">
 		<h3>Check Out Golf Courses around the World!</h3>
 		<input id="text-input" class="controls" type="text" placeholder="Golf Courses 75219">
 		<button class="btn-sm" type="submit"><img class="img-fluid max-width: 100%; height: auto; col-sm-3"
 				src="./icon/icon_ball.webp" alt="Submit"></button>
-		<div style="width:100%; height:100%" id="map"></div>
+		<!-- <div style="width:100%; height:100%" id="map"></div> -->
 	</section>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
 		integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
 		crossorigin='anonymous'></script>
 	<script src='./script.js'></script>
-	<script src="https://maps.googleapis.com/maps/api/js?v=3"></script>
-	<!-- <script>
-		function init() {
-			var lal = { lat: 36, lng: -121 };
-			var map = new google.maps.Map(document.getElementById('map'), {
-				zoom: 4,
-				center: lal
-			});
-			var marker = new google.maps.Marker({
-				position: lal,
-				map: map
-			});
-		}
-		google.maps.event.addEventListener(window, 'load', init);
-		// Get the button and text input elements
-		var button = document.querySelector('.btn-sm');
-		var input = document.querySelector('#text-input');
-
-		// Add an event listener to the button
-		button.addEventListener('click', function () {
-			// Get the zip code or postal code entered by the user
-			var zipCode = input.value;
-
-			// Use the zip code or postal code to initiate the search for golf courses
-			var request = {
-				query: 'Golf Course ' + zipCode,
-				fields: ['name', 'formatted_address', 'geometry']
-			};
-
-			var service = new google.maps.places.PlacesService(map);
-
-			service.textSearch(request, function (results, status) {
-				if (status === google.maps.places.PlacesServiceStatus.OK) {
-					// Clear any existing markers from the map
-					for (var i = 0; i < markers.length; i++) {
-						markers[i].setMap(null);
-					}
-
-					// Create a new marker for each result and add it to the map
-					for (var i = 0; i < results.length; i++) {
-						var place = results[i];
-						var marker = new google.maps.Marker({
-							position: place.geometry.location,
-							map: map,
-							title: place.name
-						});
-						markers.push(marker);
-					}
-				}
-			});
-		});
-
-		// Define an array to store the markers
-		var markers = [];
-
-	</script> -->
 	<script>
 		(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
-			key: "AIzaSyAGGxY_XpGSaTxjC6mkdo6nV5o7FxPK8Ac"
+			key: "AIzaSyAGGxY_XpGSaTxjC6mkdo6nV5o7FxPK8Ac",
+			// Add other bootstrap parameters as needed, using camel case.
+			// Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
 		});
 	</script>
 </body>
