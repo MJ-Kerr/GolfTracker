@@ -10,7 +10,7 @@
 	<link rel='stylesheet' href='lux.css'>
 	<title>Golf Tracker</title>
 	<style>
-		#map {
+		#table {
 			height: 400px;
 			background-color: gray;
 		}
@@ -102,22 +102,40 @@
 		</ul>
 	</section>
 	<section class="clubs" id="club">
-		<ul class="nav nav-tabs justify-content-end ">
+		<ul class="nav nav-tabs justify-content-center">
 			<li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#"><img src="./icon/icon_driver.webp" alt="diver-img"><b><u>Drivers</u></b></a>
+				<a class="nav-link active" aria-current="page" href="#"><img src="./icon/icon_driver.webp"
+						alt="diver-img"></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#"><img src="./icon/icon-iron.webp" alt="iron-img"><b><u>Irons</u></b></a>
+				<a class="nav-link" href="#"><img src="./icon/icon-iron.webp" alt="iron-img"></a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" href="#"><img src="./icon/icon_wedge.webp" alt="wedge-img"><b><u>Wedges</u></b></a>
+				<a class="nav-link" href="#"><img src="./icon/icon_wedge.webp" alt="wedge-img"></a>
 			</li>
 		</ul>
-		<div class="bg-image img-fluid" style="background-image: url(./pictures/fairway.jpg); height: 100vh;">
-			<h3>Clubs Coming Soon!!!</h3>
+	</section>
+	<section class="table" id="table">
+		<h3>Check Out Golf Courses In Your Area!</h3>
+		<input id="text-input" class="controls" type="text" placeholder="Golf Courses 75219">
+		<button class="btn-sm" type="submit"><img class="img-fluid max-width: 100%; height: auto; col-sm-3"
+				src="./icon/icon_ball.webp" alt="Submit"></button>
+		<div class="container mt-5">
+			<table class="table text-dark">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Address</th>
+						<th>City</th>
+						<th>State</th>
+					</tr>
+				</thead>
+				<tbody id="golf-courses">
+				</tbody>
+			</table>
 		</div>
 	</section>
-	<section class="new-clubs" id="new-clubs">
+	<section class="new-clubs row justify-content-center align-items-center" id="new-clubs">
 		<div class="accordion accordion-flush my-4 py-4 col-md-5" id="links">
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="heading-1">
@@ -129,6 +147,7 @@
 				<div id="golf-link-1" class="accordion-collapse collapse">
 					<a href="https://www.golfgalaxy.com/" class="text-decoration-none">Golf Galaxy</a>
 				</div>
+
 			</div>
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="heading-2">
@@ -175,30 +194,26 @@
 				</div>
 			</div>
 		</div>
-		<!-- <div class="col-md-5 text-center d-none d-md-block">
-			<img class="img-fluid" src="./pictures/scott-warman-HHi1Hy4k9cg-unsplash.jpg"
-				alt="golfer">
-		</div> -->
+		<div class="col-md-5 text-center d-none d-md-block">
+			<img class="img-fluid" src="./pictures/pbgl-7thholes.jpeg" alt="7th">
+		</div>
 	</section>
-	<section class="maps" id="map">
-		<h3>Check Out Golf Courses around the World!</h3>
-		<input id="text-input" class="controls" type="text" placeholder="Golf Courses 75219">
-		<button class="btn-sm" type="submit"><img class="img-fluid max-width: 100%; height: auto; col-sm-3"
-				src="./icon/icon_ball.webp" alt="Submit"></button>
-		<!-- <div style="width:100%; height:100%" id="map"></div> -->
-	</section>
+	<footer class="bg-light text-center text-lg-start">
+		<!-- Copyright -->
+		<div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+			© 2023 Copyright:
+			<a class="text-dark text-decoration-none" href="https://github.com/MJ-Kerr/">MJK Design</a>
+		</div>
+		<!-- Copyright -->
+	</footer>
 	<!-- Option 1: Bootstrap Bundle with Popper -->
 	<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js'
 		integrity='sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p'
 		crossorigin='anonymous'></script>
 	<script src='./script.js'></script>
-	<script>
-		(g => { var h, a, k, p = "The Google Maps JavaScript API", c = "google", l = "importLibrary", q = "__ib__", m = document, b = window; b = b[c] || (b[c] = {}); var d = b.maps || (b.maps = {}), r = new Set, e = new URLSearchParams, u = () => h || (h = new Promise(async (f, n) => { await (a = m.createElement("script")); e.set("libraries", [...r] + ""); for (k in g) e.set(k.replace(/[A-Z]/g, t => "_" + t[0].toLowerCase()), g[k]); e.set("callback", c + ".maps." + q); a.src = `https://maps.${c}apis.com/maps/api/js?` + e; d[q] = f; a.onerror = () => h = n(Error(p + " could not load.")); a.nonce = m.querySelector("script[nonce]")?.nonce || ""; m.head.append(a) })); d[l] ? console.warn(p + " only loads once. Ignoring:", g) : d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)) })({
-			key: "AIzaSyAGGxY_XpGSaTxjC6mkdo6nV5o7FxPK8Ac",
-			// Add other bootstrap parameters as needed, using camel case.
-			// Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
-		});
-	</script>
+	<!-- jQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 </body>
 
 </html>
