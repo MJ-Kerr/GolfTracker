@@ -25,30 +25,30 @@ fetch('https://golf-course-finder.p.rapidapi.com/courses?radius=10&lat=36.569103
 
 
 
-// function printArrayAverage(arr) {
-//     if (arr.length == 0) {
-//         console.log("Empty arr, no average val");
-//         return;
-//     }
-//     var sum = arr[0];
-//     for (var idx = 1; idx < arr.length; idx++) {
-//         sum += arr[idx];
-//     }
-//     return sum / arr.length;
-// }
+function printArrayAverage(arr) {
+    if (arr.length == 0) {
+        console.log("Empty arr, no average val");
+        return;
+    }
+    var sum = arr[0];
+    for (var idx = 1; idx < arr.length; idx++) {
+        sum += arr[idx];
+    }
+    return sum / arr.length;
+}
 
 // document.getElementById("driver-return").innerText = printArrayAverage();
 
 
-// let numArray = [];
+let numArray = [];
 
-// const input = document.getElementById('num-input-driver');
-// const btn = document.getElementById('submit-btn-driver');
+const input = document.getElementById('driver-input');
+const btn = document.getElementById('submit-btn-driver');
 
 
-// btn.addEventListener('click', function () {
-//     let num = parseInt(input.value);
-//     numArray.push(num);
+btn.addEventListener('click', function () {
+    let num = parseInt(input.value);
+    numArray.push(num);
 
-// printArrayAverage(numArray);
-// });
+printArrayAverage(numArray);
+});
