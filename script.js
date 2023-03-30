@@ -8,29 +8,23 @@ const golfCourse = {
 
 fetch('https://golf-course-finder.p.rapidapi.com/courses?radius=10&lat=36.56910381018662&lng=-121.95035631683683', golfCourse)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response =>{ console.log(response)
+    const golfCourses = response.courses.slice(0, 3);
+	const tbody = $('#golf-courses');
+	golfCourses.forEach(golfCourse => {
+		const row = `
+			<tr>
+				<td>${golfCourse.name}</td>
+				<td>${golfCourse.zip_code}</td>
+			</tr>
+		`;
+		tbody.append(row);
+	});
+})
 .catch(err => console.error(err));
 
-// fetch('https://golf-course-finder.p.rapidapi.com/courses?radius=10&lat=36.56910381018662&lng=-121.95035631683683', options)
-// .then(response => response.json())
-// .then(response => { 
-    // const golfCourses = response.results;
-	// const tbody = $('#golf-courses');
-	// golfCourses.forEach(golfCourse => {
-		// const row = `
-			// <tr>
-				// <td>${golfCourse.name}</td>
-				// <td>${golfCourse.address}</td>
-				// <td>${golfCourse.city}</td>
-				// <td>${golfCourse.state}</td>
-			// </tr>
-		// `;
-		// tbody.append(row);
-	// });
-// })
 
 
-// .catch(err => console.error(err));
 // function printArrayAverage(arr) {
 //     if (arr.length == 0) {
 //         console.log("Empty arr, no average val");

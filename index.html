@@ -11,8 +11,8 @@
 	<title>Golf Tracker</title>
 	<style>
 		#table {
-			height: 400px;
-			background-color: gray;
+			height: 100%;
+			background-color: black;
 		}
 	</style>
 
@@ -102,7 +102,8 @@
 		</ul>
 	</section>
 	<section class="clubs" id="club">
-		<ul class="nav nav-tabs justify-content-center">
+		<h2>Enter After Each Shot</h2>
+		<ul class="nav nav-tabs justify-content-center nav-fill">
 			<li class="nav-item">
 				<a class="nav-link active" aria-current="page" href="#"><img src="./icon/icon_driver.webp"
 						alt="diver-img"></a>
@@ -115,19 +116,14 @@
 			</li>
 		</ul>
 	</section>
-	<section class="table" id="table">
-		<h3>Check Out Golf Courses In Your Area!</h3>
-		<input id="text-input" class="controls" type="text" placeholder="Golf Courses 75219">
-		<button class="btn-sm" type="submit"><img class="img-fluid max-width: 100%; height: auto; col-sm-3"
-				src="./icon/icon_ball.webp" alt="Submit"></button>
+	<section class="table text-success bolder " id="table">
+		<h2 class="text-success">Golf Courses in your area!</h2>
 		<div class="container mt-5">
-			<table class="table text-dark">
+			<table class="table text-success bolder">
 				<thead>
 					<tr>
 						<th>Name</th>
-						<th>Address</th>
-						<th>City</th>
-						<th>State</th>
+						<th>Zip Code</th>
 					</tr>
 				</thead>
 				<tbody id="golf-courses">
@@ -212,8 +208,7 @@
 		crossorigin='anonymous'></script>
 	<script src='./script.js'></script>
 	<!-- jQuery -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>`
 </body>
 
 </html>
