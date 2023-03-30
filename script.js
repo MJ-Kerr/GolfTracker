@@ -6,23 +6,55 @@ const golfCourse = {
     }
 };
 
-fetch('https://golf-course-finder.p.rapidapi.com/courses?radius=10&lat=36.56910381018662&lng=-121.95035631683683', golfCourse)
-    .then(response => response.json())
-    .then(response => {
-        console.log(response)
-        const golfCourses = response.courses.slice(0, 3);
-        const tbody = $('#golf-courses');
-        golfCourses.forEach(golfCourse => {
-            const row = `
-			<tr>
-				<td>${golfCourse.name}</td>
-				<td>${golfCourse.zip_code}</td>
-			</tr>
-		`;
-            tbody.append(row);
-        });
-    })
-    .catch(err => console.error(err));
+function searchGolfCourses() {
+	const searchName = document.getElementById('search-name').value;
+	const searchZip = document.getElementById('search-zip').value;
+	let endpoint = `https://golf-course-finder.p.rapidapi.com/courses?radius=10&lat=36.56910381018662&lng=-121.95035631683683`;
+	if (searchName) {
+		endpoint += `&search=${searchName}`;
+	}
+	if (searchZip) {
+		endpoint += `&zip_code=${searchZip}`;
+	}
+	fetch(endpoint, golfCourse)
+		.then(response => response.json())
+		.then(response => {
+			console.log(response)
+			const golfCourses = response.courses.slice(0, 3);
+			const tbody = $('#golf-courses');
+			tbody.empty();
+			golfCourses.forEach(golfCourse => {
+				const row = `
+					<tr>
+						<td>${golfCourse.name}</td>
+						<td>${golfCourse.zip_code}</td>
+					</tr>
+				`;
+				tbody.append(row);
+			});
+		})
+		.catch(err => console.error(err));
+}
+
+document.getElementById('search-button').addEventListener('click', searchGolfCourses);
+
+// fetch('https://golf-course-finder.p.rapidapi.com/courses?radius=10&lat=36.56910381018662&lng=-121.95035631683683', golfCourse)
+    // .then(response => response.json())
+    // .then(response => {
+        // console.log(response)
+        // const golfCourses = response.courses.slice(0, 3);
+        // const tbody = $('#golf-courses');
+        // golfCourses.forEach(golfCourse => {
+            // const row = `
+			// <tr>
+				// <td>${golfCourse.name}</td>
+				// <td>${golfCourse.zip_code}</td>
+			// </tr>
+		// `;
+            // tbody.append(row);
+        // });
+    // })
+    // .catch(err => console.error(err));
 
 
 function printArrayAverage(arr) {
