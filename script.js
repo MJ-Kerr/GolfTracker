@@ -20,7 +20,7 @@ function searchGolfCourses() {
 		.then(response => response.json())
 		.then(response => {
 			console.log(response)
-			const golfCourses = response.courses.slice(0, 3);
+			const golfCourses = response.courses;
 			const tbody = $('#golf-courses');
 			tbody.empty();
 			golfCourses.forEach(golfCourse => {
